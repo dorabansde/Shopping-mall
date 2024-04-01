@@ -2,11 +2,12 @@ package spring.Shopping.mall.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.security.core.parameters.P;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
-@Table(name = "member")
+@Table(name = "MEMBER")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
@@ -35,15 +36,17 @@ public class Member {
     @Column(name = "ADDRESS")
     private String ADDRESS;
 
+    @CreatedDate
     @Column(name = "ENROLL_DATE")
-    private Date ENROLL_DATE;
+    private LocalDateTime ENROLL_DATE;
 
+    @LastModifiedDate
     @Column(name = "LAST_UPDATE")
-    private Date LAST_UPDATE;
+    private LocalDateTime LAST_UPDATE;
 
     @Builder
     public Member(String EMAIL, String PASSWORD, int AGE, char GENDER
-            , int PHONE, String ADDRESS, Date ENROLL_DATE, Date LAST_UPDATE) {
+            , int PHONE, String ADDRESS, LocalDateTime ENROLL_DATE, LocalDateTime LAST_UPDATE) {
         this.EMAIL = EMAIL;
         this.PASSWORD = PASSWORD;
         this.AGE = AGE;
