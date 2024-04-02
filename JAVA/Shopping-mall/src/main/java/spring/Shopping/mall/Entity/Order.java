@@ -12,9 +12,9 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 기본키를 자동으로 1씩 증가
     @Column(name = "ORDER_ID", updatable = false)
     private Long ORDER_ID;
-@Column
+    @Column
     private Long USER_ID;
-@Column
+    @Column
     private Long PRODUCT_ID;
     @Column(name = "TOTAL_PRICE")
     private int TOTAL_PRICE;
@@ -30,16 +30,16 @@ public class Order {
     private String ADDRESS;
 
     @Builder
-    public Order(Long USER_ID,Long PRODUCT_ID,int TOTAL_PRICE,
-                 String ORDER_COMMENT,LocalDateTime ORDER_ENROLL,
-                 int ORDER_PHONE,String ADDRESS) {
+    public Order(Long USER_ID, Long PRODUCT_ID, int TOTAL_PRICE,
+                 String ORDER_COMMENT, LocalDateTime ORDER_ENROLL,
+                 int ORDER_PHONE, String ADDRESS) {
 
         this.USER_ID = USER_ID;
-        this.PRODUCT_ID= PRODUCT_ID;
-        this.TOTAL_PRICE=TOTAL_PRICE;
-        this.ORDER_COMMENT=ORDER_COMMENT;
-        this.ORDER_ENROLL=ORDER_ENROLL;
-        this.ORDER_PHONE=ORDER_PHONE;
-        this.ADDRESS=ADDRESS;
+        this.PRODUCT_ID = PRODUCT_ID;
+        this.TOTAL_PRICE = TOTAL_PRICE;
+        this.ORDER_COMMENT = ORDER_COMMENT;
+        this.ORDER_ENROLL = ORDER_ENROLL;
+        this.ORDER_PHONE = ORDER_PHONE;
+        this.ADDRESS = ADDRESS;
     }
 }
