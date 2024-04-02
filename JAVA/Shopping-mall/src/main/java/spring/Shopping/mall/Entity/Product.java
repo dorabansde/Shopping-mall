@@ -10,7 +10,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 기본키를 자동으로 1씩 증가
     @Column(name = "PRODUCT_ID", updatable = false)
     private Long PRODUCT_ID;
-    @OneToMany(mappedBy = "Category")
+    @Column(name = "CATEGORY_ID")
     private Long CATEGORY_ID;
     @Column(name = "PRODUCT_PRICE")
     private int PRODUCT_PRICE;
@@ -24,4 +24,10 @@ public class Product {
     @CreatedDate
     @Column(name = "PRODUCT_ENROLL")
     private LocalDateTime PRODUCT_ENROLL;
+
+    public void update(Long PRODUCT_ID, Long CATEGORY_ID, LocalDateTime PRODUCT_ENROLL){
+        this.PRODUCT_ID = PRODUCT_ID;
+        this.CATEGORY_ID = CATEGORY_ID;
+        this.PRODUCT_ENROLL = PRODUCT_ENROLL;
+    }
 }
